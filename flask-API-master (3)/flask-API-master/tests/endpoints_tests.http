@@ -1,0 +1,31 @@
+curl --request GET http://127.0.0.1:5000/users/get-all-users
+
+curl -X POST http://127.0.0.1:5000/users/add-user-json \
+--header "Content-Type: application/json" \
+--data
+'{
+    "user_id": "3",
+    "user_firstname": "dave",
+    "user_surname": "fayankin",
+    "user_company": "SWE",
+    "user_occupation": "Engineer",
+    "user_email": "david@yahoo.com"
+}'
+
+curl --request GET http://127.0.0.1:5000/users/get-one-user/3
+
+curl --request GET http://127.0.0.1:5000/users/get-one-user?user_id=2301395
+
+curl --request GET http://127.0.0.1:5000/users/get-one-user-json \
+--header "Content-Type: application/json" \
+--data
+'{
+    "user_id": "3"
+}'
+
+curl --request DELETE http://127.0.0.1:5000/users/delete-one-user/3
+
+curl --request PUT http://127.0.0.1:5000/users/update-user
+
+curl --request GET --url 'https://api.what3words.com/v3/convert-to-coordinates? \
+key=MY-API-KEY&words=filled.count.soap&format=json'
